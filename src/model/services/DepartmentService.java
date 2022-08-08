@@ -9,7 +9,11 @@ import model.entities.Department;
 public class DepartmentService {
 
 	private DepartmentDao dao = DaoFactory.createDepartmentDao();
-
+	
+	public void remove(Department obj) {
+		dao.deleteById(obj.getId());
+	}
+	
 	public List<Department> findAll() {
 		return dao.findAll();
 	}
